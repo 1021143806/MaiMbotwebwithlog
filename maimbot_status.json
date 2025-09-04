@@ -116,13 +116,13 @@
         "chatModel": "Gemini 2.5 Flash-Lite + Gemini 2.5 Pro",
         "vlmModel": "Gemini 2.0 Flash Lite",
         "other": "Gemma 3 27B",
-        "setting": ["爱网上冲浪的男大语气"],
+        "setting": ["爱网上冲浪的男大"],
         "plugins": [
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
-        "version": "0.8.0-正式版",
+        "version": "0.8.0",
         "deployer": "xiaoce(1016576260)",
         "note": ""
       },
@@ -162,7 +162,7 @@
       },
       {
         "name": "星苒",
-        "statusText": "🔴 偶尔活",
+        "statusText": "🟡 偶尔活",
         "chatModel": "DeepSeek V3 + DeepSeek 0528",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
@@ -172,7 +172,7 @@
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
-        "version": "Mai-0.9.1-dev",
+        "version": "0.9.1-dev",
         "deployer": "峖冉(2318621872)",
         "note": "部署者說有點傻"
       },
@@ -196,7 +196,7 @@
       {
         "name": "狄普西克bot",
         "statusText": "🟡 随缘启动",
-        "chatModel": "DeepSeek V3",
+        "chatModel": "DeepSeek V3.1-Chat",
         "vlmModel": "Qwen2.5-VL-7B-instruct",
         "other": "",
         "setting": ["基于千岛盐 DeepSeek 设定","阴阳怪气的虎鲸美少女"],
@@ -212,7 +212,7 @@
       {
         "name": "Claude.",
         "statusText": "🟡 随缘启动",
-        "chatModel": ".Claude 4 Sonnet / Claude 3.7 Sonnet",
+        "chatModel": ".Claude 4 Sonnet|Claude 3.7 Sonnet",
         "vlmModel": "Qwen2.5-VL-7B-instruct",
         "other": "",
         "setting": ["温柔贴心的 AI 助手 Claude；橘发西装少女，头发有很多乱毛"],
@@ -253,7 +253,7 @@
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
-        "version": "0.9.1-dev",
+        "version": "0.10.1",
         "deployer": "羽洁|石楠子(1021143806|1350093676)",
         "note": "神人",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot7_K"
@@ -261,7 +261,7 @@
       {
         "name": "Claude",
         "statusText": "🟢 稳定运行",
-        "chatModel": "Claude 4 Sonnet",
+        "chatModel": "Claude 4 Opus",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
         "setting": ["基于石楠子nana 的 Claude 设定，16 岁","高道德"],
@@ -270,14 +270,31 @@
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
-        "version": "0.10.0",
+        "version": "0.10.0-dev",
         "deployer": "羽洁|石楠子(1021143806|1350093676)",
         "note": "",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot8_C"
       },
+            {
+        "name": "Lucian",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "GPT-5-chat-latest",
+        "vlmModel": "GPT-5-chat-latest",
+        "other": "",
+        "setting": ["基于Seren和Lucian的设定"],
+        "plugins": [
+          {"k":"绘图","v":"已启用(GPT-image-1)","lvl":"g"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1",
+        "deployer": "羽洁|Seren(1021143806|3374560443)",
+        "note": "最新最热的GPT-5口牙",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot9_L"
+      },
       {
         "name": "Qwen",
-        "statusText": "🟡不稳定运行 cuz 部署在PC上",
+        "statusText": "🟡不稳定运行",
         "chatModel": "Qwen3-235B-A22B-Instruct-2507",
         "vlmModel": "Qwen2.5-VL-72B",
         "other": "",
@@ -289,7 +306,7 @@
         ],
         "version": "0.10.0",
         "deployer": "林俊旸1337(2928774913)",
-        "note": "暫時死了，等復活"
+        "note": ""
      },
      {
         "name": "Monday",

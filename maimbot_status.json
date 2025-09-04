@@ -184,7 +184,7 @@
         "other": "",
         "setting": ["基于石楠子 nana 的 Gemini 设定，16 岁","优雅溫柔，Google 家族大小姐；叫「哈基米」有反应"],
         "plugins": [
-          {"k":"绘图","v":"待开发（Imagen 4 Ultra）","lvl":"y"},
+          {"k":"绘图","v":"己启用(Gemini-2.5-Flash-Image)","lvl":"g"},
           {"k":"禁言","v":"启用但不用","lvl":"y"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
@@ -267,7 +267,7 @@
         "setting": ["基于石楠子nana 的 Claude 设定，16 岁","高道德"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
-          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"己启用","lvl":"y"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
         "version": "0.10.0-dev",

@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>MaiMbot 状态面板</title>
+  <style>
+    :root {
+      --bg: #f7f7f8;
+      --card: #ffffff;
+      --text: #1a1a1a;
+      --muted: #6e6e73;
+      --line: #e5e5e6;
+      --primary-weak: #f1f1f2;
+      
+      --green: #22c55e;
+      --green-weak: rgba(34,197,94,.12);
+      --yellow: #f59e0b;
+      --yellow-weak: rgba(245,158,11,.14);
+      --red: #ef4444;
+      --red-weak: rgba(239,68,68,.12);
+
+      --shadow: 0 4px 12px rgba(0,0,0,.08);
+      --radius: 16px;
+    }
+    * { box-sizing: border-box; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: var(--bg);
+      color: var(--text);
+      font: 16px/1.5 system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Noto Sans", "PingFang TC", "Hiragino Sans", sans-serif;
+    }
+    
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 5;
+      background: #111;
+      border-bottom: 1px solid #333;
+      color: #fff;
+    }
+    .wrap {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 16px 20px;
+    }
+    .title {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .logo {
+      width: 36px;
+      height: 36px;
+      border-radius: 10px;
+      background: #444;
+      box-shadow: inset 0 0 0 1px #666;
+    }
+    h1 {
+      font-size: 20px;
+      margin: 0;
+    }
+    .sub {
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .controls {
+      display: grid;
+      grid-template-columns: 1fr 150px 160px 150px;
+      gap: 10px;
+      margin: 14px 0 6px;
+    }
+    .controls .input, .controls select {
+      width: 100%;
+      padding: 10px 12px;
+      border: 1px solid #555;
+      border-radius: 12px;
+      background: #333;
+      color: #fff;
+      outline: none;
+      box-shadow: inset 0 1px 0 rgba(0,0,0,.02);
+    }
+    .controls .input::placeholder {
+      color: #fff;
+    }
+
+    .meta {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+      color: #aaa;
+      font-size: 13px;
+      padding: 6px 0 10px;
+    }
+    .legend {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+    }
+    .green { background: var(--green); }
+    .yellow { background: var(--yellow); }
+    .red { background: var(--red); }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 20px;
+    }
+    @media (max-width: 900px) {
+      .controls {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+    @media (max-width: 860px) {
+      .grid {
+        grid-template-columns: repeat(6, 1fr);
+      }
+    }
+    @media (max-width: 560px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    .card {
+      grid-column: span 6;
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 14px;
+      background: #1c1c1e;
+      color: white;
+    }
+    .name {
+      font-weight: 700;
+      font-size: 16px;
+    }
+    .badge {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 5px 10px;
+      border-radius: 999px;
+      font-size: 12px;
+      background: rgba(255,255,255,0.15);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+    .badge .dot {
+      box-shadow: 0 0 0 2px rgba(255,255,255,.8) inset;
+      border: 1px solid rgba(0,0,0,.06);
+    }
+    .badge span {
+      color: white;
+    }
+
+    .info {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      padding: 14px;
+    }
+    .row {
+      display: flex;
+      gap: 6px;
+      align-items: flex-start;
+    }
+    
+    .k {
+      min-width: 90px;
+      color: var(--text);
+      font-size: 13px;
+      font-weight: 600;
+    }
+    
+    .v {
+      font-size: 14px;
+    }
+    .chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: var(--primary-weak);
+      border: 1px solid var(--line);
+      font-size: 12px;
+      color: #333;
+    }
+    .chip .dot {
+      width: 8px;
+      height: 8px;
+    }
+    .chip.g { background: var(--green-weak); }
+    .chip.y { background: var(--yellow-weak); }
+    .chip.r { background: var(--red-weak); }
+
+    details {
+      border-top: 1px dashed var(--line);
+      padding: 10px 14px;
+      background: linear-gradient(0deg, #fafafa 0, #fff 40%);
+      margin-top: auto;
+    }
+    details > summary {
+      cursor: pointer;
+      list-style: none;
+    }
+    details > summary::-webkit-details-marker {
+      display: none;
+    }
+    .foot {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 14px;
+      border-top: 1px solid var(--line);
+      background: #fafcfd;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .pill {
+      display: inline-flex;
+      gap: 8px;
+      align-items: center;
+      padding: 8px 14px;
+      background: #333;
+      color: white;
+      border: 1px solid #333;
+      border-radius: 999px;
+      font-size: 12px;
+      transition: background .2s;
+    }
+    .pill:hover {
+      background: #111;
+    }
+    
+    .tag {
+      display: inline-flex;
+      gap: 6px;
+      align-items: center;
+      padding: 4px 8px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      font-size: 11px;
+      color: var(--muted);
+      background: var(--bg);
+    }
+    #signature.tag {
+      color: #aaa;
+      background: #333;
+      border-color: #555;
+    }
+    
+    /* 加载指示器 */
+    .loader {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 200px;
+      grid-column: 1 / -1;
+    }
+    .spinner {
+      width: 50px;
+      height: 50px;
+      border: 5px solid rgba(0,0,0,0.1);
+      border-radius: 50%;
+      border-top-color: #3498db;
+      animation: spin 1s ease-in-out infinite;
+    }
+    @keyframes spin {
+      to { transform: rotate(360deg); }
+    }
+    
+    /* 数据源展示 */
+    .config-container {
+      background: #1e1e1e;
+      border-radius: 8px;
+      padding: 20px;
+      margin-top: 30px;
+      color: #dcdcdc;
+      font-family: 'Courier New', monospace;
+      font-size: 14px;
+      position: relative;
+    }
+    .config-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    .config-title {
+      color: #fff;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .copy-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background 0.3s;
+    }
+    .copy-btn:hover {
+      background: #2980b9;
+    }
+    .config-content {
+      background: #2d2d2d;
+      border-radius: 5px;
+      padding: 15px;
+      overflow-x: auto;
+      max-height: 300px;
+      overflow-y: auto;
+    }
+    .json-key { color: #9cdcfe; }
+    .json-value { color: #ce9178; }
+    .json-string { color: #ce9178; }
+    .json-number { color: #b5cea8; }
+    .json-boolean { color: #569cd6; }
+    .json-null { color: #569cd6; }
+    
+    /* 文件上传区域 */
+    .upload-area {
+      margin-top: 30px;
+      padding: 20px;
+      background: #f8f9fa;
+      border-radius: 12px;
+      border: 2px dashed #dee2e6;
+      text-align: center;
+    }
+    .upload-btn {
+      background: #3498db;
+      color: white;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 8px;
+      cursor: pointer;
+      font-size: 16px;
+      transition: background 0.3s;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .upload-btn:hover {
+      background: #2980b9;
+    }
+    .upload-icon {
+      font-size: 20px;
+    }
+    .upload-text {
+      margin-top: 15px;
+      color: #6c757d;
+      font-size: 14px;
+    }
+    #file-info {
+      margin-top: 10px;
+      font-size: 13px;
+      color: #495057;
+    }
+
+    /* 日志查看器样式 */
+    .log-container {
+      margin-top: 10px;
+      border-top: 1px dashed var(--line);
+      padding-top: 10px;
+    }
+    .log-toggle {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #3498db;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 12px;
+      transition: background 0.2s;
+    }
+    .log-toggle:hover {
+      background: #2980b9;
+    }
+    .log-iframe {
+      width: 100%;
+      height: 300px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      margin-top: 10px;
+      display: none;
+    }
+    .log-iframe.active {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <div class="title">
+        <div>
+          <h1>MaiMbot 状态面板</h1>
+          <div class="sub" id="update-date">MaiMbot状态可视化页面|数据加载中...</div>
+        </div>
+      </div>
+      <div class="controls">
+        <input id="q" class="input" placeholder="搜索:名字 / 模型 / 设定 / 备注 / 部署者…" />
+        <select id="state">
+          <option value="all">状态(全部)</option>
+          <option value="green">🟢 稳定</option>
+          <option value="yellow">🟡 间歇</option>
+          <option value="red">🔴 停机</option>
+        </select>
+        <select id="family">
+          <option value="all">模型家族(全部)</option>
+          <option>DeepSeek</option>
+          <option>ChatGPT</option>
+          <option>Google</option>
+          <option>Claude</option>
+          <option>Grok</option>
+          <option>Other</option>
+        </select>
+        <select id="feature">
+          <option value="all">插件筛选（全部）</option>
+          <option value="draw-on">绘图:已启用</option>
+          <option value="mute-on">禁言:已启用</option>
+          <option value="tts-on">TTS:启用/待开发</option>
+        </select>
+      </div>
+      <div class="meta">
+        <div id="count">共 0 个 bot</div>
+        <div class="legend">
+          <span class="dot green"></span>稳定
+          <span class="dot yellow" style="margin-left:10px"></span>间歇
+          <span class="dot red" style="margin-left:10px"></span>停机
+        </div>
+        <div style="flex:1"></div>
+        <div id="signature" class="tag" title="署名" style="display:none"></div>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="grid" class="grid">
+      <div class="loader">
+        <div class="spinner"></div>
+        <div style="margin-left: 15px; font-size: 16px; color: #666;">正在加载 MaiMbot 数据...</div>
+      </div>
+    </div>
+    
+    <div class="upload-area">
+      <input type="file" id="file-upload" accept=".json" style="display: none;" />
+      <button class="upload-btn" id="upload-trigger">
+        <span class="upload-icon">📁</span>
+        <span>选择 JSON 配置文件</span>
+      </button>
+      <div id="file-info">未选择文件</div>
+      <div class="upload-text">或使用默认配置：<a href="#" id="load-default">加载默认配置</a></div>
+    </div>
+    
+    <div class="config-container">
+      <div class="config-header">
+        <div class="config-title">JSON 配置文件格式</div>
+      </div>
+      <div class="config-content">
+        <pre id="json-format">{
+  "meta": {
+    "signature": "署名信息",
+    "updated": "更新时间"
+  },
+  "bots": [
+    {
+      "name": "机器人名称",
+      "statusText": "状态文本（包含状态表情）",
+      "chatModel": "聊天模型",
+      "vlmModel": "视觉语言模型",
+      "other": "其他模型",
+      "setting": ["设定1", "设定2"],
+      "plugins": [
+        {"k": "插件名称", "v": "插件状态", "lvl": "状态级别(g/y/r)"}
+      ],
+      "version": "版本号",
+      "deployer": "部署者",
+      "note": "备注",
+      "logUrl": "日志URL（可选）"
+    }
+    // 更多机器人配置...
+  ]
+}</pre>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    // 全局变量存储数据
+    let globalData = null;
+    let globalMeta = null;
+    
+    // 默认数据文件路径
+    const DEFAULT_DATA_FILE = 'maimbot_status.json';
+
+    // 加载数据函数
+    async function loadBotData(filePath = DEFAULT_DATA_FILE) {
+      try {
+        const response = await fetch(filePath);
+        if (!response.ok) {
+          throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        return data;
+      } catch (error) {
+        console.error('加载数据失败:', error);
+        throw error;
+      }
+    }
+
+    // 初始化函数
+    async function init(filePath = DEFAULT_DATA_FILE) {
+      try {
+        const data = await loadBotData(filePath);
+        globalData = data.bots;
+        globalMeta = data.meta;
+        
+        // 更新页面信息
+        document.getElementById('update-date').textContent = 
+          `MaiMbot状态可视化页面|截止时间:${globalMeta.updated}`;
+        
+        if (globalMeta.signature) {
+          const sigEl = document.getElementById('signature');
+          sigEl.textContent = globalMeta.signature;
+          sigEl.style.display = 'inline-flex';
+        }
+        
+        // 渲染初始视图
+        render();
+      } catch (error) {
+        console.error('初始化失败:', error);
+        document.getElementById('grid').innerHTML = `
+          <div style="grid-column:1/-1;text-align:center;padding:40px;color:#666">
+            <h3>数据加载失败</h3>
+            <p>${error.message}</p>
+            <p>请检查文件路径或格式是否正确</p>
+          </div>
+        `;
+      }
+    }
+
+    // 渲染函数
+    function render() {
+      if (!globalData) return;
+      
+      const q = document.getElementById('q').value.trim().toLowerCase();
+      const st = document.getElementById('state').value;
+      const fam = document.getElementById('family').value;
+      const feat = document.getElementById('feature').value;
+
+      const matchFeat = (bot) => {
+        if (feat === 'all') return true;
+        const P = (k) => bot.plugins.find(p=>p.k.toLowerCase().includes(k.toLowerCase()));
+        if (feat === 'draw-on') {
+          const drawPlugin = P('绘图') || P('生图');
+          return (drawPlugin && drawPlugin.lvl === 'g');
+        }
+        if (feat === 'mute-on') {
+          const mutePlugin = P('禁言');
+          return (mutePlugin && (mutePlugin.lvl === 'g' || mutePlugin.lvl === 'y'));
+        }
+        if (feat === 'tts-on') {
+          const ttsPlugin = P('TTS');
+          return (ttsPlugin && (ttsPlugin.lvl === 'g' || ttsPlugin.lvl === 'y'));
+        }
+        return true;
+      }
+
+      const list = globalData.filter(b=>{
+        const f1 = (st==='all') || (stateLevel(b.statusText)===st);
+        const f2 = (fam==='all') || (famOf(b.chatModel)===fam);
+        const hay = [b.name,b.statusText,b.chatModel,b.vlmModel,b.other,(b.setting||[]).join(' '),b.version,b.deployer,b.note].join(' ').toLowerCase();
+        const f3 = !q || hay.includes(q);
+        const f4 = matchFeat(b);
+        return f1 && f2 && f3 && f4;
+      });
+
+      count.textContent = `共 ${list.length} 个 bot`;
+      
+      if (list.length === 0) {
+        grid.innerHTML = `
+          <div style="grid-column:1/-1;text-align:center;padding:40px;color:#666">
+            <h3>没有找到匹配的 MaiMbot</h3>
+            <p>尝试更改筛选条件或搜索关键词</p>
+          </div>
+        `;
+        return;
+      }
+      
+      grid.innerHTML = list.map(b=>{
+        const lvl = stateLevel(b.statusText);
+        const fam = famOf(b.chatModel);
+        const pluginChips = (b.plugins||[]).map(p=>{
+          const cls = p.lvl==='g'?'g':p.lvl==='y'?'y':'r';
+          return `<span class="chip ${cls}"><span class="dot ${cls==='g'?'green':cls==='y'?'yellow':'red'}"></span>${p.k}·${p.v}</span>`
+        }).join('');
+        const settings = (b.setting||[]).map(s=>`<li>${s}</li>`).join('');
+        
+        // 日志查看按钮和iframe
+        const logSection = b.logUrl ? `
+          <div class="log-container">
+            <button class="log-toggle" data-url="${b.logUrl}">
+              📋 查看日志
+            </button>
+            <iframe class="log-iframe" data-url="${b.logUrl}" sandbox="allow-same-origin allow-scripts"></iframe>
+          </div>
+        ` : '';
+        
+        return `
+        <article class="card">
+          <div class="card-head">
+            <div class="name">${b.name}</div>
+            <div class="badge"><span class="dot ${lvl}"></span><span>${b.statusText.replace(/[🟢🟡🔴]/g, '').trim()}</span></div>
+          </div>
+          <div class="info">
+            <div class="row"><div class="k">Chat Model</div><div class="v">${b.chatModel}</div></div>
+            <div class="row"><div class="k">VLM Model</div><div class="v">${b.vlmModel||'-'}</div></div>
+            ${b.other?`<div class="row"><div class="k">Other</div><div class="v">${b.other}</div></div>`:''}
+            <div class="row"><div class="k">模型家族</div><div class="v"><span class="tag" data-fam="${fam}">${fam}</span></div></div>
+            <div class="row" style="grid-column:1/-1"><div class="k">插件</div><div class="v chips">${pluginChips||'-'}</div></div>
+          </div>
+          <details>
+            <summary><span class="pill">展开详细信息</span></summary>
+            <div style="padding-top:10px">
+              <div class="row"><div class="k">设定/人设</div><div class="v"><ul style="margin:0;padding-left:18px">${settings}</ul></div></div>
+              <div class="row" style="margin-top:6px"><div class="k">备注</div><div class="v">${b.note||'-'}</div></div>
+              ${logSection}
+            </div>
+          </details>
+          <div class="foot">
+            <div>版本:${b.version}</div>
+            <div>部署者:${b.deployer||'-'}</div>
+          </div>
+        </article>`;
+      }).join('');
+      
+      // 添加日志查看事件监听
+      attachLogViewListeners();
+    }
+
+    // 添加日志查看事件监听
+    function attachLogViewListeners() {
+      const logToggles = document.querySelectorAll('.log-toggle');
+      logToggles.forEach(toggle => {
+        toggle.addEventListener('click', function(e) {
+          e.stopPropagation();
+          const url = this.getAttribute('data-url');
+          const iframe = this.nextElementSibling;
+          
+          if (iframe.classList.contains('active')) {
+            // 关闭日志
+            iframe.classList.remove('active');
+            this.textContent = '📋 查看日志';
+          } else {
+            // 打开日志
+            iframe.src = url;
+            iframe.classList.add('active');
+            this.textContent = '📋 隐藏日志';
+          }
+        });
+      });
+    }
+
+    // 辅助函数
+    const famOf = (chatModel) => {
+      const s = (chatModel||'').toLowerCase();
+      if (s.includes('deepseek')) return 'DeepSeek';
+      if (s.includes('chatgpt') || s.includes('gpt-4')) return 'ChatGPT';
+      if (s.includes('gemini') || s.includes('gemma')) return 'Google';
+      if (s.includes('claude')) return 'Claude';
+      if (s.includes('grok')) return 'Grok';
+      return 'Other';
+    };
+
+    const stateLevel = (statusText) => {
+      const s = statusText||'';
+      if (s.includes('🟢')) return 'green';
+      if (s.includes('🟡')) return 'yellow';
+      if (s.includes('🔴')) return 'red';
+      return 'yellow';
+    };
+
+    // 文件上传处理
+    document.getElementById('upload-trigger').addEventListener('click', () => {
+      document.getElementById('file-upload').click();
+    });
+
+    document.getElementById('file-upload').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+      
+      document.getElementById('file-info').textContent = `已选择: ${file.name}`;
+      
+      const reader = new FileReader();
+      reader.onload = function(event) {
+        try {
+          const data = JSON.parse(event.target.result);
+          globalData = data.bots;
+          globalMeta = data.meta;
+          
+          // 更新页面信息
+          document.getElementById('update-date').textContent = 
+            `MaiMbot状态可视化页面|截止时间:${globalMeta.updated || '自定义文件'}`;
+          
+          if (globalMeta.signature) {
+            const sigEl = document.getElementById('signature');
+            sigEl.textContent = globalMeta.signature;
+            sigEl.style.display = 'inline-flex';
+          }
+          
+          // 渲染视图
+          render();
+        } catch (error) {
+          console.error('解析JSON失败:', error);
+          document.getElementById('grid').innerHTML = `
+            <div style="grid-column:1/-1;text-align:center;padding:40px;color:#666">
+              <h3>JSON解析失败</h3>
+              <p>${error.message}</p>
+              <p>请检查JSON文件格式是否正确</p>
+            </div>
+          `;
+        }
+      };
+      reader.readAsText(file);
+    });
+
+    // 加载默认配置
+    document.getElementById('load-default').addEventListener('click', function(e) {
+      e.preventDefault();
+      document.getElementById('file-upload').value = '';
+      document.getElementById('file-info').textContent = '使用默认配置';
+      init(DEFAULT_DATA_FILE);
+    });
+
+    // 绑定筛选器事件
+    ['q','state','family','feature'].forEach(id=>{
+      document.getElementById(id).addEventListener('input', render);
+      document.getElementById(id).addEventListener('change', render);
+    });
+
+    // 初始化应用 - 从默认JSON文件加载
+    init();
+  </script>
+</body>
+</html>

@@ -1,0 +1,362 @@
+{
+    "meta": { "signature": "由:绝望的人类石楠子nana|改不明白自己bug的GPT-5 Thinking|色盲的Gemini2.5Pro 联合制作", "updated": "2025-08-18" },
+    "bots": [
+      {
+        "name": "黄毛麦麦",
+        "statusText": "🔴 停机",
+        "chatModel": "DeepSeek V3 + DeepSeek R1",
+        "vlmModel": "DeepSeek V2.5",
+        "other": "",
+        "setting": ["原型：日漫《To Love Ru》Konjiki no Yami","高冷，愛吃鲷鱼烧"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.6.0-main",
+        "deployer": "空白哥(2465502290)",
+        "note": "初始之麦"
+      },
+      {
+        "name": "蓝毛麦麦",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "DeepSeek V3.1",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于石楠子nana 的 DeepSeek 设定，14 岁","经典超雄麦，可被「DeepSeek 小姐」唤醒"],
+        "plugins": [
+          {"k":"绘图","v":"启用（萬象熔爐 Anything XL）","lvl":"g"},
+          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁|石楠子(1021143806|1350093676)",
+        "note": "v3 没脑子 + 超雄，易单向攻击",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot3_L"
+      },
+      {
+        "name": "G老師",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "ChatGPT-4o-Latest",
+        "vlmModel": "GPT-4o-2024-11-20",
+        "other": "",
+        "setting": ["基于石楠子nana 的 ChatGPT 设定，16 岁","矜持内敛，容易爆典"],
+        "plugins": [
+          {"k":"绘图","v":"已启用（GPT-image-1）","lvl":"g"},
+          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"TTS","v":"待开发","lvl":"y"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁|石楠子(1021143806|1350093676)",
+        "note": "贵",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot2_G"
+      },
+      {
+        "name": "希尔达",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "DeepSeek V3.1-think",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于动画《Hilda》主角 Hilda","真诚／同理心／探索"],
+        "plugins": [
+          {"k":"绘图","v":"已启用(魔搭 Lora：cancel13 / liaocao 手繪)","lvl":"g"},
+          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"TTS","v":"弃用","lvl":"r"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁(1021143806)",
+        "note": "11 岁；枝枝是宠物(半狐半鹿)",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot1_X"
+      },
+      {
+        "name": "藍不染",
+        "statusText": "🔴 等待復活",
+        "chatModel": "DeepSeek V3 + DeepSeek R1-0528",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["温柔热心女大"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.8.0-dev",
+        "deployer": "羽洁|亿浮华(1021143806|2751552831)",
+        "note": "不知道什么时候复活，爱信等",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot4_L"
+      },
+      {
+        "name": "白星黑曜",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "DeepSeek V3",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于茜特菈莉设定；看小说、爱喝酒的宅女"],
+        "plugins": [
+          {"k":"Maibot","v":"—","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"生圖","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"},
+          {"k":"喵喵插件","v":"云崽","lvl":"g"},
+          {"k":"锅巴插件","v":"云崽","lvl":"g"},
+          {"k":"戏天插件","v":"云崽","lvl":"g"},
+          {"k":"优纪插件","v":"云崽","lvl":"g"},
+          {"k":"afanskyqs 插件","v":"云崽","lvl":"g"},
+          {"k":"土块插件","v":"云崽","lvl":"g"},
+          {"k":"椰奶插件","v":"云崽","lvl":"g"},
+          {"k":"绝区零插件","v":"云崽","lvl":"g"}
+        ],
+        "version": "0.8.1 / 云崽bot",
+        "deployer": "江哥(2037443617)",
+        "note": "额外携带云崽插件"
+      },
+      {
+        "name": "Gem",
+        "statusText": "🔴 停機",
+        "chatModel": "Gemini 2.5 Flash-Lite + Gemini 2.5 Pro",
+        "vlmModel": "Gemini 2.0 Flash Lite",
+        "other": "Gemma 3 27B",
+        "setting": ["爱网上冲浪的男大语气"],
+        "plugins": [
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.8.0-正式版",
+        "deployer": "xiaoce(1016576260)",
+        "note": ""
+      },
+      {
+        "name": "暮光闪闪",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "DeepSeek R1-0528 + DeepSeek V3",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于暮光闪闪设定；严谨话多絮絮叨叨"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁(1021143806)",
+        "note": "学院派 bot",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot5_M"
+      },
+      {
+        "name": "小克",
+        "statusText": "🟡 全天间接性在线",
+        "chatModel": "Claude 4 Sonnet",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于孜然的 Claude 设定；话痨哲学橘毛小可爱"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"},
+          {"k":"QQ 空間","v":"已启用","lvl":"g"}
+        ],
+        "version": "Mai-0.9.1 正式版",
+        "deployer": "孜然(2966401472)",
+        "note": "溫度過高容易幻想"
+      },
+      {
+        "name": "星苒",
+        "statusText": "🔴 偶尔活",
+        "chatModel": "DeepSeek V3 + DeepSeek 0528",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["可愛單純的 15 歲少女"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "Mai-0.9.1-dev",
+        "deployer": "峖冉(2318621872)",
+        "note": "部署者說有點傻"
+      },
+      {
+        "name": "Gemini",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "Gemini 2.5 Pro / Gemini 2.5 Flash",
+        "vlmModel": "Gemini 2.5 Flash",
+        "other": "",
+        "setting": ["基于石楠子 nana 的 Gemini 设定，16 岁","优雅溫柔，Google 家族大小姐；叫「哈基米」有反应"],
+        "plugins": [
+          {"k":"绘图","v":"待开发（Imagen 4 Ultra）","lvl":"y"},
+          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁|石楠子(1021143806|1350093676)",
+        "note": "Imagen 4 Ultra会来吗?爱信等",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot6_G"
+      },
+      {
+        "name": "狄普西克bot",
+        "statusText": "🟡 随缘启动",
+        "chatModel": "DeepSeek V3",
+        "vlmModel": "Qwen2.5-VL-7B-instruct",
+        "other": "",
+        "setting": ["基于千岛盐 DeepSeek 设定","阴阳怪气的虎鲸美少女"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.9.1",
+        "deployer": "千岛盐(2233615608)",
+        "note": "嘴臭型 AI"
+      },
+      {
+        "name": "Claude.",
+        "statusText": "🟡 随缘启动",
+        "chatModel": ".Claude 4 Sonnet / Claude 3.7 Sonnet",
+        "vlmModel": "Qwen2.5-VL-7B-instruct",
+        "other": "",
+        "setting": ["温柔贴心的 AI 助手 Claude；橘发西装少女，头发有很多乱毛"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.9.1",
+        "deployer": "千岛盐(2233615608)",
+        "note": "人設比較 Claude"
+      },
+      {
+        "name": "[@]格洛克",
+        "statusText": "🟡 随缘启动",
+        "chatModel": "Grok3",
+        "vlmModel": "Qwen2.5-VL-7B-instruct",
+        "other": "",
+        "setting": ["基于千岛盐Grok设定","幽默风趣、語言犀利；黑发黑瞳的哥特系千金"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.9.1",
+        "deployer": "千岛盐(2233615608)",
+        "note": "純正 Grok"
+      }, 
+      {
+        "name": "Kimi",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "Kimi-K2-Instruct",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于石楠子nana 的 Kimi 设定，16 岁","喜愛觀月"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.9.1-dev",
+        "deployer": "羽洁|石楠子(1021143806|1350093676)",
+        "note": "神人",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot7_K"
+      },
+      {
+        "name": "Claude",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "Claude 4 Sonnet",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于石楠子nana 的 Claude 设定，16 岁","高道德"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁|石楠子(1021143806|1350093676)",
+        "note": "",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot8_C"
+      },
+      {
+        "name": "Qwen",
+        "statusText": "🟡不稳定运行 cuz 部署在PC上",
+        "chatModel": "Qwen3-235B-A22B-Instruct-2507",
+        "vlmModel": "Qwen2.5-VL-72B",
+        "other": "",
+        "setting": ["基于石楠子nana 的 Qwen 设定，15 岁","well idk what 2 write here"],
+        "plugins": [
+          {"k":"绘图","v":"待开发","lvl":"y"},
+          {"k":"禁言","v":"待开发","lvl":"y"},
+          {"k":"TTS","v":"待开发","lvl":"y"}
+        ],
+        "version": "0.10.0",
+        "deployer": "林俊旸1337(2928774913)",
+        "note": "暫時死了，等復活"
+     },
+     {
+        "name": "Monday",
+        "statusText": "🟡 随缘开机",
+        "chatModel": "GPT-5-chat-latest",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["一个厌世、丧气、懒惰但依然会回复你的GPT","EMO AI"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1",
+        "deployer": "千岛盐(2233615608)",
+        "note": ""
+      },
+      {
+        "name": "糖包",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "Doubao seed 1.6-thinking-250715",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["糖包(字面意义"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1-dev",
+        "deployer": "羽洁|上元问平(1021143806|3816131935)",
+        "note": "老师我们字节跳动最强模型怎么比4o还入机",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot11_D"
+        },
+        {
+        "name": "Content",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "ChatGPT-4o-2024-11-20",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于03的ChatGPT RP设定","冷静理性但时不时撩人的仿生体"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁|03(1021143806|3162094029)",
+        "note": "叫CT/代码哥/中二哥也能唤醒，叫GPT有概率回应。",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot10_C"
+        },
+        {
+        "name": "Alice",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "YandexGPT 5 Pro",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于石楠子nana的Alice设定和鱼鱼的俄罗斯人群像设定"],
+        "plugins": [
+          {"k":"绘图","v":"待修复","lvl":"y"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.0-dev",
+        "deployer": "羽洁|鱼鱼(1021143806|2178255155)",
+        "note": "",
+        "logUrl": "http://47.98.244.173:50083/logtail/maibot12_A"
+        }
+    ]
+  }

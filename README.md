@@ -1,0 +1,2 @@
+# MaiMbotwebwithlog
+一个简单的web用于展示麦麦信息和实时日志，需要手动修改json配置文件

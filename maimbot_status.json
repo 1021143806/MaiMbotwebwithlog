@@ -1,5 +1,5 @@
 {
-    "meta": { "signature": "由:绝望的人类石楠子nana|改不明白自己bug的GPT-5 Thinking|色盲的Gemini2.5Pro 联合制作", "updated": "2025-08-18" },
+    "meta": { "signature": "由:绝望的人类石楠子nana|改不明白自己bug的GPT-5 Thinking|色盲的Gemini2.5Pro 联合制作", "updated": "2025-09-08" },
     "bots": [
       {
         "name": "黄毛麦麦",
@@ -23,15 +23,15 @@
         "chatModel": "DeepSeek V3.1",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
-        "setting": ["基于石楠子nana 的 DeepSeek 设定，14 岁","经典超雄麦，可被「DeepSeek 小姐」唤醒"],
+        "setting": ["基于石楠子nana的DeepSeek 设定，14岁","经典超雄麦，可被「DeepSeek 小姐」唤醒"],
         "plugins": [
-          {"k":"绘图","v":"启用（萬象熔爐 Anything XL）","lvl":"g"},
-          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"绘图","v":"启用(萬象熔爐 Anything XL)","lvl":"g"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
         "version": "0.10.0",
         "deployer": "羽洁|石楠子(1021143806|1350093676)",
-        "note": "v3 没脑子 + 超雄，易单向攻击",
+        "note": "v3.1有脑子+超雄，易变出生",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot3_L"
       },
       {
@@ -40,10 +40,10 @@
         "chatModel": "ChatGPT-4o-Latest",
         "vlmModel": "GPT-4o-2024-11-20",
         "other": "",
-        "setting": ["基于石楠子nana 的 ChatGPT 设定，16 岁","矜持内敛，容易爆典"],
+        "setting": ["基于石楠子nana的ChatGPT设定，16岁","矜持内敛，容易爆典"],
         "plugins": [
-          {"k":"绘图","v":"已启用（GPT-image-1）","lvl":"g"},
-          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"绘图","v":"已启用(GPT-image-1)","lvl":"g"},
+          {"k":"禁言","v":"启用","lvl":"g"},
           {"k":"TTS","v":"待开发","lvl":"y"}
         ],
         "version": "0.10.0",
@@ -59,13 +59,13 @@
         "other": "",
         "setting": ["基于动画《Hilda》主角 Hilda","真诚／同理心／探索"],
         "plugins": [
-          {"k":"绘图","v":"已启用(魔搭 Lora：cancel13 / liaocao 手繪)","lvl":"g"},
-          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"绘图","v":"已启用(魔搭Lora:cancel13/liaocao 手繪)","lvl":"g"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"弃用","lvl":"r"}
         ],
         "version": "0.10.0",
         "deployer": "羽洁(1021143806)",
-        "note": "11 岁；枝枝是宠物(半狐半鹿)",
+        "note": "11岁；枝枝是宠物(半狐半鹿)",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot1_X"
       },
       {
@@ -112,7 +112,7 @@
       },
       {
         "name": "Gem",
-        "statusText": "🔴 停機",
+        "statusText": "🟡 随机复活",
         "chatModel": "Gemini 2.5 Flash-Lite + Gemini 2.5 Pro",
         "vlmModel": "Gemini 2.0 Flash Lite",
         "other": "Gemma 3 27B",
@@ -145,28 +145,28 @@
       },
       {
         "name": "小克",
-        "statusText": "🟡 全天间接性在线",
+        "statusText": "🟡 间接性在线",
         "chatModel": "Claude 4 Sonnet",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
-        "setting": ["基于孜然的 Claude 设定；话痨哲学橘毛小可爱"],
+        "setting": ["基于孜然的Claude设定；话痨哲学橘毛小可爱"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"},
           {"k":"QQ 空間","v":"已启用","lvl":"g"}
         ],
-        "version": "Mai-0.9.1 正式版",
+        "version": "0.9.1",
         "deployer": "孜然(2966401472)",
         "note": "溫度過高容易幻想"
       },
       {
         "name": "星苒",
-        "statusText": "🟡 偶尔活",
+        "statusText": "🟢 稳定运行",
         "chatModel": "DeepSeek V3 + DeepSeek 0528",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
-        "setting": ["可愛單純的 15 歲少女"],
+        "setting": ["可愛單純的15歲少女"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"未启用","lvl":"r"},
@@ -179,13 +179,13 @@
       {
         "name": "Gemini",
         "statusText": "🟢 稳定运行",
-        "chatModel": "Gemini 2.5 Pro / Gemini 2.5 Flash",
+        "chatModel": "Gemini 2.5 Pro",
         "vlmModel": "Gemini 2.5 Flash",
         "other": "",
-        "setting": ["基于石楠子 nana 的 Gemini 设定，16 岁","优雅溫柔，Google 家族大小姐；叫「哈基米」有反应"],
+        "setting": ["基于石楠子nana的Gemini设定，16岁","优雅溫柔，Google家族大小姐；叫「哈基米」有反应"],
         "plugins": [
           {"k":"绘图","v":"己启用(Gemini-2.5-Flash-Image)","lvl":"g"},
-          {"k":"禁言","v":"启用但不用","lvl":"y"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
         "version": "0.10.0",
@@ -199,7 +199,7 @@
         "chatModel": "DeepSeek V3.1-Chat",
         "vlmModel": "Qwen2.5-VL-7B-instruct",
         "other": "",
-        "setting": ["基于千岛盐 DeepSeek 设定","阴阳怪气的虎鲸美少女"],
+        "setting": ["基于千岛盐DeepSeek设定","阴阳怪气的虎鲸美少女"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"未启用","lvl":"r"},
@@ -207,7 +207,7 @@
         ],
         "version": "0.9.1",
         "deployer": "千岛盐(2233615608)",
-        "note": "嘴臭型 AI"
+        "note": "嘴臭型AI"
       },
       {
         "name": "Claude.",
@@ -215,7 +215,7 @@
         "chatModel": ".Claude 4 Sonnet|Claude 3.7 Sonnet",
         "vlmModel": "Qwen2.5-VL-7B-instruct",
         "other": "",
-        "setting": ["温柔贴心的 AI 助手 Claude；橘发西装少女，头发有很多乱毛"],
+        "setting": ["温柔贴心的AI助手Claude；橘发西装少女，头发有很多乱毛"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"未启用","lvl":"r"},
@@ -223,7 +223,7 @@
         ],
         "version": "0.9.1",
         "deployer": "千岛盐(2233615608)",
-        "note": "人設比較 Claude"
+        "note": "人設比較Claude"
       },
       {
         "name": "[@]格洛克",
@@ -239,15 +239,15 @@
         ],
         "version": "0.9.1",
         "deployer": "千岛盐(2233615608)",
-        "note": "純正 Grok"
+        "note": "純正Grok"
       }, 
       {
         "name": "Kimi",
         "statusText": "🟢 稳定运行",
-        "chatModel": "Kimi-K2-Instruct",
+        "chatModel": "Kimi-K2-0905",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
-        "setting": ["基于石楠子nana 的 Kimi 设定，16 岁","喜愛觀月"],
+        "setting": ["基于石楠子nana的Kimi设定，16岁","喜愛觀月"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"未启用","lvl":"r"},
@@ -264,7 +264,7 @@
         "chatModel": "Claude 4 Opus",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
-        "setting": ["基于石楠子nana 的 Claude 设定，16 岁","高道德"],
+        "setting": ["基于石楠子nana的Claude设定，16岁","高道德"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"己启用","lvl":"g"},
@@ -294,11 +294,11 @@
       },
       {
         "name": "Qwen",
-        "statusText": "🟡不稳定运行",
+        "statusText": "🟢 稳定运行",
         "chatModel": "Qwen3-235B-A22B-Instruct-2507",
         "vlmModel": "Qwen2.5-VL-72B",
         "other": "",
-        "setting": ["基于石楠子nana 的 Qwen 设定，15 岁","well idk what 2 write here"],
+        "setting": ["基于石楠子nana的Qwen(閉源)设定，15岁"],
         "plugins": [
           {"k":"绘图","v":"待开发","lvl":"y"},
           {"k":"禁言","v":"待开发","lvl":"y"},
@@ -377,11 +377,11 @@
         },
         {
         "name": "LLaMA",
-        "statusText": "🟡不稳定运行",
-        "chatModel": "llama-4-maverick-17b-128e-instruct",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "llama-3.3-70b",
         "vlmModel": "Qwen2.5-VL-72B",
         "other": "",
-        "setting": ["基于石楠子nana的LLaMA设定，15岁","我操這個llama4怎麼這麼唐"],
+        "setting": ["基于石楠子nana的LLaMA设定，15岁"],
         "plugins": [
           {"k":"绘图","v":"待开发","lvl":"y"},
           {"k":"禁言","v":"待开发","lvl":"y"},
@@ -389,7 +389,55 @@
         ],
         "version": "0.10.1",
         "deployer": "林俊旸1337|石楠子(2928774913|1350093676)",
-        "note": "跟個丁真似的"
-     }
+        "note": "我操llama4怎么这么唐"
+        },
+        {
+        "name": "Qwen",
+        "statusText": "🟡不稳定运行",
+        "chatModel": "Qwen 3 Max",
+        "vlmModel": "Qwen 3 Max",
+        "other": "",
+        "setting": ["基于石楠子nana的Qwen(閉源)设定，15岁"],
+        "plugins": [
+          {"k":"绘图","v":"待开发","lvl":"y"},
+          {"k":"禁言","v":"待开发","lvl":"y"},
+          {"k":"TTS","v":"待开发","lvl":"y"}
+        ],
+        "version": "0.10.1",
+        "deployer": "林俊旸1337|石楠子(2928774913|1350093676)",
+        "note": "嘴臭这一块"
+        },
+        {
+        "name": "Gemini",
+        "statusText": "🟡 随缘开机",
+        "chatModel": "Gemini-2.5-Pro-preview-05-06",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于千岛盐Gemini设定"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1",
+        "deployer": "千岛盐(2233615608)",
+        "note": ""
+        },
+        {
+        "name": "0528",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "DeepSeek R1-0528",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于上元的DeepSeek R1-0528设定"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1-dev",
+        "deployer": "上元问平(3816131935)",
+        "note": "老师我们字节跳动最强模型怎么比4o还入机",
+        },
     ]
   }

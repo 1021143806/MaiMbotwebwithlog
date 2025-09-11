@@ -261,7 +261,7 @@
       {
         "name": "Claude",
         "statusText": "🟢 稳定运行",
-        "chatModel": "Claude 4 Opus",
+        "chatModel": "Claude 4.1 Opus",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
         "setting": ["基于石楠子nana的Claude设定，16岁","高道德"],
@@ -426,10 +426,10 @@
         {
         "name": "0528",
         "statusText": "🟢 稳定运行",
-        "chatModel": "DeepSeek R1-0528",
+        "chatModel": "DeepSeek R1-0520",
         "vlmModel": "Qwen2.5-VL-32B-Instruct",
         "other": "",
-        "setting": ["基于上元的DeepSeek R1-0528设定"],
+        "setting": ["基于上元的DeepSeek R1-05设定"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"未启用","lvl":"r"},
@@ -455,6 +455,23 @@
         "deployer": "羽洁|Marvel(1021143806|3815749136)",
         "note": "",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot13_J"
-      }
+      },
+        {
+        "name": "GLM",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "GLM-4.5",
+        "vlmModel" : "GLM-4.5V"
+        "other": "",
+        "setting": ["基于石楠子nana的GLM設定","清華大姐姐"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.0",
+        "deployer": "羽洁|石楠子|鼠鼠|xiaoiec(1021143806|1350093676|379343625|1016576260)",
+        "note": "",
+        "logUrl": ""
+        }
     ]
   }

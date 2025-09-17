@@ -460,7 +460,7 @@
         "name": "GLM",
         "statusText": "🟢 稳定运行",
         "chatModel": "GLM-4.5",
-        "vlmModel" : "GLM-4.5V"
+        "vlmModel" : "GLM-4.5V",
         "other": "",
         "setting": ["基于石楠子nana的GLM設定","清華大姐姐"],
         "plugins": [

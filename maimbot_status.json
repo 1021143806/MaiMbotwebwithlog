@@ -29,7 +29,7 @@
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
-        "version": "0.10.0",
+        "version": "0.10.3",
         "deployer": "羽洁|石楠子(1021143806|1350093676)",
         "note": "v3.1有脑子+超雄，易变出生",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot3_L"
@@ -46,7 +46,7 @@
           {"k":"禁言","v":"启用","lvl":"g"},
           {"k":"TTS","v":"待开发","lvl":"y"}
         ],
-        "version": "0.10.0",
+        "version": "0.10.3",
         "deployer": "羽洁|石楠子(1021143806|1350093676)",
         "note": "贵",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot2_G"
@@ -188,7 +188,7 @@
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
-        "version": "0.10.0",
+        "version": "0.10.3",
         "deployer": "羽洁|石楠子(1021143806|1350093676)",
         "note": "Imagen 4 Ultra会来吗?爱信等",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot6_G"
@@ -508,21 +508,133 @@
         "logUrl": "http://47.98.244.173:50083/logtail/maibot16_A"
       },
       {
-        "name": "o1",
+        "name": "白葱",
         "statusText": "🟢 稳定运行",
-        "chatModel": "o1",
-        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "chatModel": "'Kimi-k2-0905','ds v3.1-thinking','Gemini2.5-flash-thinking','R1-0528',",
+        "vlmModel": "'GLM-4.5v','Qwen2.5-vl-72b'",
         "other": "",
-        "setting": [""],
+        "setting": ["以游戏project sekai中诞生于"无人的sekai的初音未来"为原型", "说话用省略号代表思考停顿或自言自语"],
         "plugins": [
           {"k":"绘图","v":"未启用","lvl":"r"},
           {"k":"禁言","v":"未启用","lvl":"r"},
           {"k":"TTS","v":"未启用","lvl":"r"}
         ],
-        "version": "0.10.0",
+        "version": "0.10.3",
+        "deployer": "鱼鱼(2178255155)",
+        "note": "回复模型会互肘抽盲盒
+      },
+        {
+        "name": "ℂ𝕙𝕒𝕥𝔾ℙ𝕋❺",
+        "statusText": "🟡 随缘开机",
+        "chatModel": "GPT-5-Chat-Latest",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于φGPT5设定"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1",
+        "deployer": "φ(3367180366)",
+        "note": ""
+        },
+        {
+        "name": "ChatGPT",
+        "statusText": "🔴 没开",
+        "chatModel": "GPT-5-Chat-Latest",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于千岛盐ChatGPT设定"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1",
+        "deployer": "千岛盐(2233615608)",
+        "note": ""
+        },
+        {
+        "name": "Kimi",
+        "statusText": "🟡 随缘开机",
+        "chatModel": "Kimi K2-0905",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于千岛盐Kimi设定"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.1",
+        "deployer": "千岛盐(2233615608)",
+        "note": ""
+        },
+        {
+        "name": "芙宁娜",
+        "statusText": "🔴 还没开",
+        "chatModel": "TIG3.6-Mirage",
+        "vlmModel": "TIG3.6-VL-Lite",
+        "other": "",
+        "setting": ["基于鲤鱼王芙宁娜设定"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "?",
+        "deployer": "鲤鱼王(3442207952)",
+        "note": "这是个OneBot"
+        },
+      {
+        "name": "o1",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "OpenAI o1",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于石楠子o1设定","冷脸认真文科生"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.3",
         "deployer": "羽洁|石楠子(1021143806|1350093676)",
         "note": "",
         "logUrl": "http://47.98.244.173:50083/logtail/maibot17_o"
-      }
+      }, 
+        {
+        "name": "Mistral",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "Mistral-Large-Latest",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于石楠子Mistral设定","法国扫猫"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.3",
+        "deployer": "羽洁|千岛盐|石楠子(1021143806|2113663803|1350093676)",
+        "note": "英法百年战争TV"
+        },
+        {
+            "name": "o3",
+        "statusText": "🟢 稳定运行",
+        "chatModel": "OpenAI o3",
+        "vlmModel": "Qwen2.5-VL-32B-Instruct",
+        "other": "",
+        "setting": ["基于石楠子o3设定"],
+        "plugins": [
+          {"k":"绘图","v":"未启用","lvl":"r"},
+          {"k":"禁言","v":"未启用","lvl":"r"},
+          {"k":"TTS","v":"未启用","lvl":"r"}
+        ],
+        "version": "0.10.3",
+        "deployer": "羽洁|xiaoiec|石楠子(1021143806|1016576260|1350093676)",
+        "note": ""
+        }
     ]
   }

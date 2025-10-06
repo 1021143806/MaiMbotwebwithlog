@@ -637,6 +637,23 @@
       "deployer": "羽洁|xiaoiec|石楠子(1021143806|1016576260|1350093676)",
       "note": "",
       "logUrl": "http://47.98.244.173:50083/logtail/maibot19_o"
+    },
+    {
+      "name": "Qwen",
+      "statusText": "🟢 稳定运行",
+      "chatModel": "qwen-3-235b-a22b-instruct-2507",
+      "vlmModel": "qwen2.5-vl-72b",
+      "other": "",
+      "setting": [""],
+      "plugins": [
+        {"k":"绘图","v":"未启用","lvl":"r"},
+        {"k":"禁言","v":"未启用","lvl":"r"},
+        {"k":"TTS","v":"未启用","lvl":"r"}
+      ],
+      "version": "0.10.3",
+      "deployer": "羽洁|石楠子(1021143806|1350093676)",
+      "note": "",
+      "logUrl": "http://47.98.244.173:50083/logtail/maibot20_q"
     }
   ]
 }

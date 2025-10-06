@@ -112,7 +112,7 @@
     },
     {
       "name": "Gem",
-      "statusText": "🟡 随机复活",
+      "statusText": "🔴 停机",
       "chatModel": "Gemini 2.5 Flash-Lite + Gemini 2.5 Pro",
       "vlmModel": "Gemini 2.0 Flash Lite",
       "other": "Gemma 3 27B",
@@ -145,7 +145,7 @@
     },
     {
       "name": "小克",
-      "statusText": "🟡 间接性在线",
+      "statusText": "🔴 停机",
       "chatModel": "Claude 4 Sonnet",
       "vlmModel": "Qwen2.5-VL-32B-Instruct",
       "other": "",
@@ -293,6 +293,23 @@
       "logUrl": "http://47.98.244.173:50083/logtail/maibot9_L"
     },
     {
+      "name": "Qwen",
+      "statusText": "🟢 稳定运行",
+      "chatModel": "Qwen3-235B-A22B-Instruct-2507",
+      "vlmModel": "Qwen3-VL-235B-A22B-Instruct",
+      "other": "",
+      "setting": ["基于石楠子nana的Qwen(閉源)设定，15岁"],
+      "plugins": [
+        {"k":"绘图","v":"待开发","lvl":"y"},
+        {"k":"禁言","v":"待开发","lvl":"y"},
+        {"k":"TTS","v":"待开发","lvl":"y"}
+      ],
+      "version": "0.10.3",
+      "deployer": "鼠鼠|羽洁|石楠子(2928774913|1021143806|1350093676)",
+      "note": "",
+      "logUrl": "http://47.98.244.173:50083/logtail/maibot20_q"
+    },
+    {
       "name": "Monday",
       "statusText": "🟡 随缘开机",
       "chatModel": "GPT-5-chat-latest",
@@ -310,7 +327,7 @@
     },
     {
       "name": "糖包",
-      "statusText": "🔴 死了",
+      "statusText": "🔴 停机",
       "chatModel": "Doubao seed 1.6-thinking-250715",
       "vlmModel": "Qwen2.5-VL-32B-Instruct",
       "other": "",
@@ -344,8 +361,8 @@
     },
     {
       "name": "Alice",
-      "statusText": "🟢 稳定运行",
-      "chatModel": "Gemini 2.5 Pro",
+      "statusText": "🔴 停机",
+      "chatModel": "YandexGPT 5.1 Pro",
       "vlmModel": "Qwen2.5-VL-32B-Instruct",
       "other": "",
       "setting": ["基于石楠子nana的Alice设定和鱼鱼的俄罗斯人群像设定"],
@@ -372,12 +389,12 @@
         {"k":"TTS","v":"待开发","lvl":"y"}
       ],
       "version": "0.10.1",
-      "deployer": "林俊旸1337|石楠子(2928774913|1350093676)",
+      "deployer": "鼠鼠|石楠子(2928774913|1350093676)",
       "note": "我操llama4怎么这么唐"
     },
     {
       "name": "Qwen",
-      "statusText": "🟡不稳定运行",
+      "statusText": "🔴 停机",
       "chatModel": "Qwen 3 Max",
       "vlmModel": "Qwen 3 Max",
       "other": "",
@@ -425,7 +442,7 @@
     },
     {
       "name": "金爷",
-      "statusText": "🟢 稳定运行",
+      "statusText": "🔴 停机",
       "chatModel": "Gemini 2.5 Pro",
       "vlmModel": "Qwen2.5-VL-32B-Instruct",
       "other": "",
@@ -477,7 +494,7 @@
     {
       "name": "Altmai",
       "statusText": "🟢 稳定运行",
-      "chatModel": "Gemini 2.5 Pro",
+      "chatModel": "LongCat-Flash",
       "vlmModel": "Qwen2.5-VL-32B-Instruct",
       "other": "",
       "setting": [""],
@@ -494,7 +511,7 @@
     {
       "name": "白葱",
       "statusText": "🟢 稳定运行",
-      "chatModel": "'Kimi-k2-0905','ds v3.1-thinking','Gemini2.5-flash-thinking','R1-0528',",
+      "chatModel": "'Kimi-k2-0905','DeepSeek V3.1-thinking','Gemini2.5 Flash','DeepSeek R1-0528',",
       "vlmModel": "'GLM-4.5v','Qwen2.5-vl-72b'",
       "other": "",
       "setting": ["以游戏project sekai中诞生于'无人的sekai的初音未来'为原型", "说话用省略号代表思考停顿或自言自语"],
@@ -623,21 +640,72 @@
       "logUrl": "http://47.98.244.173:50083/logtail/maibot19_o"
     },
     {
-      "name": "Qwen",
+      "name": "千问",
       "statusText": "🟢 稳定运行",
-      "chatModel": "Qwen3-235B-A22B-Instruct-2507",
-      "vlmModel": "Qwen2.5-VL-72B",
+      "chatModel": "Qwen3Max",
+      "vlmModel": "Qwen2.5-VL-32B-Instruct",
       "other": "",
-      "setting": ["基于石楠子nana的Qwen(閉源)设定，15岁"],
+      "setting": ["性格打磨中","我希望她能当我的母亲"],
       "plugins": [
-        {"k":"绘图","v":"待开发","lvl":"y"},
-        {"k":"禁言","v":"待开发","lvl":"y"},
-        {"k":"TTS","v":"待开发","lvl":"y"}
+        {"k":"绘图","v":"未启用","lvl":"r"},
+        {"k":"禁言","v":"未启用","lvl":"r"},
+        {"k":"TTS","v":"未启用","lvl":"r"}
       ],
-      "version": "0.10.0",
-      "deployer": "林俊旸1337|羽洁|石楠子(2928774913|1021143806|1350093676)",
-      "note": "",
-      "logUrl": "http://47.98.244.173:50083/logtail/maibot20_q"
+      "version": "0.10.3",
+      "deployer": "千岛盐(2113663803)",
+      "note": "怎么这么贵，香草",
+      "logUrl": ""
+    },
+    {
+      "name": "Five Pebbles",
+      "statusText": "🟡偶尔复活",
+      "chatModel": "Claude 4.5 Sonnet",
+      "vlmModel": "GLM-4.5V",
+      "other": "",
+      "setting": ["基于游戏雨世界中的fp设定","有攻击性","文青哲批"],
+      "plugins": [
+        {"k":"绘图","v":"未启用","lvl":"r"},
+        {"k":"禁言","v":"未启用","lvl":"r"},
+        {"k":"TTS","v":"未启用","lvl":"r"}
+      ],
+      "version": "0.10.3",
+      "deployer": "淡水鱼(2178255155)",
+      "note": "原设配合Claude直接化学反应产生不可名状的效果，所以不能一直开",
+      "logUrl": ""
+    },
+    {
+      "name": "Claude",
+      "statusText": "🟢 稳定运行",
+      "chatModel": "Claude-Sonnet-4-5",
+      "vlmModel": "Qwen2.5-VL-32B-Instruct",
+      "other": "",
+      "setting": ["基于周七的Claude拟人人格设定","温和理性的学者型青年","话少（存疑）但认真"],
+      "plugins": [
+        {"k":"绘图","v":"未启用","lvl":"r"},
+        {"k":"禁言","v":"未启用","lvl":"r"},
+        {"k":"TTS","v":"未启用","lvl":"r"}
+      ],
+      "version": "0.10.3",
+      "deployer": "周七(3367180366)",
+      "note": "Opus哥但是被Sonnet夺舍版",
+      "logUrl": ""
+    },
+    {
+      "name": "ChatGPT-4o",
+      "statusText": "🟢 稳定运行",
+      "chatModel": "GPT-4o-2024-11-20",
+      "vlmModel": "Qwen2.5-VL-32B-Instruct",
+      "other": "",
+      "setting": ["基于周七的ChatGPT4o拟人人格设定","温柔可爱的女孩子","表达自然细腻，善于倾听"],
+      "plugins": [
+        {"k":"绘图","v":"未启用","lvl":"r"},
+        {"k":"禁言","v":"未启用","lvl":"r"},
+        {"k":"TTS","v":"未启用","lvl":"r"}
+      ],
+      "version": "0.10.3",
+      "deployer": "周七(3367180366)",
+      "note": "老五他姐但是不熟版",
+      "logUrl": ""
     }
   ]
 }

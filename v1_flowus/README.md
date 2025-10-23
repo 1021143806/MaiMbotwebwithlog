@@ -6,3 +6,4 @@
 1. nginx 用于反向代理网页
 2. frp 配合阿里云服务器实现内网穿透
 3. supervisor 使用 supervisor 配合源码部署麦麦，然后配合 nginx 反向代理服务，公开日志界面
+4. 使用 flowus api 需要相关配置

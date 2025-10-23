@@ -488,16 +488,47 @@
         // 获取日志URL - 修正属性名
         const logUrl = props['内嵌日志页（需要公网可访问）_logUrl']?.url || '';
         
-        // 解析插件数据
+        // 解析插件数据 - 修正版本
         let plugins = [];
         const pluginsText = props['插件启用情况_plugins']?.rich_text?.[0]?.plain_text;
         if (pluginsText) {
           try {
-            // 清理插件文本并解析为数组
-            const cleanedText = pluginsText.trim().replace(/,\s*$/, '');
-            plugins = JSON.parse(`[${cleanedText}]`);
+            // 清理插件文本：移除所有不可见字符和多余空格
+            const cleanedText = pluginsText
+              .replace(/\u00A0/g, ' ') // 替换不间断空格为普通空格
+              .replace(/^\s+|\s+$/g, '') // 移除首尾空格
+              .replace(/\s+/g, ' ') // 合并多个连续空格
+              .trim();
+            
+            console.log('清理后的插件文本:', cleanedText); // 调试用
+            
+            // 检查是否是有效的JSON数组格式
+            if (cleanedText.startsWith('{') && cleanedText.includes('},')) {
+              // 如果是多个JSON对象用逗号分隔，包装成数组
+              plugins = JSON.parse(`[${cleanedText}]`);
+            } else if (cleanedText.startsWith('[') && cleanedText.endsWith(']')) {
+              // 如果已经是数组格式，直接解析
+              plugins = JSON.parse(cleanedText);
+            } else {
+              console.warn('无法识别的插件格式:', cleanedText);
+            }
           } catch (e) {
             console.warn(`解析插件数据失败 (${name}):`, e);
+            console.warn('原始插件文本:', pluginsText);
+            
+            // 备选方案：手动解析
+            try {
+              // 尝试手动分割和解析
+              const pluginEntries = pluginsText.split('},').map(entry => {
+                let cleanedEntry = entry.trim();
+                if (!cleanedEntry.endsWith('}')) cleanedEntry += '}';
+                if (!cleanedEntry.startsWith('{')) cleanedEntry = '{' + cleanedEntry;
+                return JSON.parse(cleanedEntry);
+              });
+              plugins = pluginEntries;
+            } catch (manualError) {
+              console.warn('手动解析也失败:', manualError);
+            }
           }
         }
         
@@ -534,7 +565,7 @@
       };
 
       // 保存到本地文件便于排查,调试使用，test
-      saveDataToLocal({ meta, bots });
+      //saveDataToLocal({ meta, bots });
 
       return { meta, bots };
     }

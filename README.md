@@ -10,17 +10,22 @@
 使用 v1_local 中的地址访问
 修改 maimbot_status.json 即可修改对应信息
 
-### 二、使用 Flowus API 作为云端服务器
+### 二、使用 FlowUs API 作为云端服务器
 
-在 MaiMbot_status.html 中找到以下配置
+通过 FlowUs 多维表配置数据，然后使用 API 进行获取数据
 
-``` shell
-// FlowUs API 配置
-const FLOWUS_API_URL = 'https://api.flowus.cn/v1/databases/********************************/query';
-const FLOWUS_TOKEN = '****************************************';
-```
+- 配置方法
 
-按照 [Flowus API 文档](https://flowus.cn/share/df7cd54f-1c21-4fc1-9fd8-ce81be1918a5) 修改为自己的多维表
+1. 拷贝 [多维表模板链接](https://flowus.cn/jieiyu_painting/share/56640539-712a-4bbd-b0d9-437e069cc25c?code=0YKPXL) 到你自己的空间
+2. 在 MaiMbot_status.html 中找到以下配置
+
+    ``` shell
+    // FlowUs API 配置
+    const FLOWUS_API_URL = 'https://api.flowus.cn/v1/databases/********************************/query';
+    const FLOWUS_TOKEN = '****************************************';
+    ```
+
+    按照 [Flowus API 文档](https://flowus.cn/share/df7cd54f-1c21-4fc1-9fd8-ce81be1918a5) 修改为自己拷贝后的多维表对应的地址，以及开通后的对应的 token
 
 ## 需要的相关软件
 
@@ -36,3 +41,4 @@ const FLOWUS_TOKEN = '****************************************';
 ## 页面展示
 
 ![alt text](images/2025-10-23T12:37:31.020Z-image.png)
+![alt text](images/2025-10-23T12:45:08.997Z-image.png)

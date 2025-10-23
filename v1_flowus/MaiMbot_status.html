@@ -368,7 +368,7 @@
     <div class="wrap">
       <div class="title">
         <div>
-          <h1>MaiMbot 状态面板（with flowUs）</h1>
+          <h1>MaiMbot 状态面板（with FlowUs）</h1>
           <div class="sub" id="update-date">MaiMbot状态可视化页面|数据加载中...</div>
         </div>
       </div>
@@ -387,6 +387,14 @@
           <option>Google</option>
           <option>Claude</option>
           <option>Grok</option>
+          <option>Doubao</option>
+          <option>Qwen</option>
+          <option>Kimi</option>
+          <option>Llama</option>
+          <option>GLM</option>
+          <option>LongCat</option>
+          <option>TIG</option>
+          <option>YandexGPT</option>
           <option>Other</option>
         </select>
         <select id="feature">
@@ -759,10 +767,18 @@
     const famOf = (chatModel) => {
       const s = (chatModel||'').toLowerCase();
       if (s.includes('deepseek')) return 'DeepSeek';
-      if (s.includes('chatgpt') || s.includes('gpt-4')) return 'ChatGPT';
+      if (s.includes('chatgpt') || s.includes('gpt-4')|| s.includes('o1')|| s.includes('o3')|| s.includes('gpt')) return 'ChatGPT';
       if (s.includes('gemini') || s.includes('gemma')) return 'Google';
       if (s.includes('claude')) return 'Claude';
       if (s.includes('grok')) return 'Grok';
+      if (s.includes('doubao')) return 'Doubao';
+      if (s.includes('qwen')) return 'Qwen';
+      if (s.includes('kimi')) return 'Kimi';
+      if (s.includes('llama')) return 'Llama';
+      if (s.includes('glm')) return 'GLM';
+      if (s.includes('longcat')) return 'LongCat';
+      if (s.includes('tig')) return 'TIG';
+      if (s.includes('yandexgpt')) return 'YandexGPT';
       return 'Other';
     };
 
